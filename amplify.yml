@@ -8,7 +8,7 @@ frontend:
       commands:
         - npm run build
         - cd build/static
-        - md .well-known && cd $_
+        - mkdir .well-known && cd .well-known
         - echo "{\"associatedApplications\":[{\"applicationId\":\"<your-app-id>\"},{\"applicationId\":\"<another-app-id>\"}]}" >> microsoft-identity-association.json
   artifacts:
     baseDirectory: build
