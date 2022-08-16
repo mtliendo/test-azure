@@ -7,7 +7,7 @@ frontend:
     build:
       commands:
         - npm run build
-        - echo "{\"associatedApplications\":[{\"applicationId\":\"<your-app-id>\"},{\"applicationId\":\"<another-app-id>\"}]}" >> build/static/.well-known/microsoft-identity-association.json
+        - echo "hello" >> build/static/.well-known/microsoft-identity-association.json
   artifacts:
     baseDirectory: build
     files:
