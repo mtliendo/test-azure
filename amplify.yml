@@ -1,0 +1,17 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - npm ci
+    build:
+      commands:
+        - npm run build
+        - echo "{\"associatedApplications\":[{\"applicationId\":\"<your-app-id>\"},{\"applicationId\":\"<another-app-id>\"}]}" >> build/static/.well-known/microsoft-identity-association.json
+  artifacts:
+    baseDirectory: build
+    files:
+      - '**/*'
+  cache:
+    paths:
+      - node_modules/**/*
